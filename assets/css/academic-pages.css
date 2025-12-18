@@ -913,22 +913,25 @@ body {
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
   display: none;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1001;
-  background-color: var(--sidebar-bg);
+  background: none;
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--text-color);
   transition: all 0.2s ease;
+  margin-right: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-menu-toggle:hover {
-  background-color: #e0e0e0;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .mobile-menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive Design */
@@ -949,7 +952,11 @@ body {
     left: auto;
     margin-right: auto;
     font-size: 1.1rem;
-    flex: 1;
+    flex: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
   }
 
   .top-nav-toggle {
@@ -996,7 +1003,7 @@ body {
     top: 60px;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-color: var(--main-bg);
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -1041,6 +1048,27 @@ body {
     margin-left: 0;
     padding: 1.5rem;
     padding-top: 5rem;
+    width: 100%;
+  }
+
+  .role-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .role-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .teaching-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .publication-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .mobile-menu-toggle {
@@ -1066,21 +1094,35 @@ body {
     font-size: 1.75rem;
   }
 
+  .timeline {
+    padding-left: 0;
+  }
+
   .timeline::before {
-    left: 100px;
+    left: 15px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-left: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .timeline-item::before {
-    left: 95px;
+    left: 7px; /* (15px center - 6px half-width - 2px border) */
+    top: 0.4rem;
   }
 
   .timeline-date {
-    width: 90px;
-    padding-right: 0.5rem;
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 0.1rem;
   }
 
   .timeline-content {
-    padding-left: 0.5rem;
+    padding-left: 0;
   }
 
   .timeline-range {
@@ -1105,6 +1147,10 @@ body {
 
   .section-title {
     font-size: 1.5rem;
+  }
+
+  .publication-title {
+    font-size: 1rem;
   }
 }
 
